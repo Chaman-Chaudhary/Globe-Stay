@@ -1,0 +1,113 @@
+<%- layout("/layouts/boilerPlate.ejs") %>
+
+<div class="row mt-4 mb-4">
+  <div class="col-8 offset-2">
+    <h3>Create New Listing</h3>
+    <form
+      method="post"
+      action="/listings"
+      class="needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="listing[title]" class="form-label">Title</label>
+        <input
+          name="listing[title]"
+          placeholder="Enter a catchy title"
+          type="text"
+          class="form-control"
+          autofocus
+          required
+        />
+        <div class="invalid-feedback">Please choose a title.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="listing[description]" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter description here.."
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a description.</div>
+      </div>
+
+      <!-- <div  class="mb-3">
+                <label for="listing[image]" class="form-label">Image URL</label>
+                <input name="listing[image]" placeholder="Enter Image URL" class="form-control">
+            </div> -->
+
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="listing[image]" class="form-label"
+            >Upload listing image</label
+          >
+          <input
+            name="listing[image]"
+            type="file"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="mb-3 col-md-6">
+          <label for="listing[category]" class="form-label">Category</label>
+          <select class="form-select" name="listing[category]" required>
+            <option value="Trending">Trending</option>
+            <option value="Iconic cities">Iconic cities</option>
+            <option value="Mountains" selected>Mountains</option>
+            <option value="Artic">Artic</option>
+            <option value="Beach">Beach</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Lakes">Lakes</option>
+            <option value="Boats">Boats</option>
+            <option value="Farms">Farms</option>
+            <option value="Ski-in/out">Ski-in/out</option>
+            <option value="Camping">Camping</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="listing[price]" class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            placeholder="1200"
+            class="form-control"
+            required="required"
+          />
+          <div class="invalid-feedback">Please enter a price.</div>
+        </div>
+
+        <div class="mb-3 col-md-6">
+          <label for="listing[country]" class="form-label">Country</label>
+          <input
+            name="listing[country]"
+            type="text"
+            placeholder="India"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a country.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="listing[location]" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          type="text"
+          placeholder="DLF Gurgaon, Haryana"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please enter a location.</div>
+      </div>
+      <button type="submit" class="btn btn-dark add-btn mt-3">Add</button>
+    </form>
+  </div>
+</div>

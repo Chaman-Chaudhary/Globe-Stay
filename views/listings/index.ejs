@@ -1,0 +1,150 @@
+<%- layout("/layouts/boilerPlate.ejs") %>
+
+<div class="filters">
+  <div class="categories col-lg-5 col-md-5 col-sm-5">
+    <a href="/listings/filters/Trending">
+      <div class="category ms-3 mt-3">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Iconic%20cities"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-monument"></i>
+        <p>Iconic cities</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Mountains"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-mountain-sun"></i>
+        <p>Mountains</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Artic"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-snowflake"></i>
+        <p>Artic</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Beach"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Beach</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Rooms"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Lakes"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-person-swimming"></i>
+        <p>Lakes</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Boats"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-ship"></i>
+        <p>Boats</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Farms"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-cow"></i>
+        <p>Farms</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Ski-in%2Fout"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-person-snowboarding"></i>
+        <p>Ski-in/out</p>
+      </div>
+    </a>
+    <a href="/listings/filters/Camping"
+      ><div class="category ms-3 mt-2">
+        <i class="fa-solid fa-campground"></i>
+        <p>Camping</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-lg-3 col-md-2 col-sm-3 ms-auto mt-3">
+    <form
+      class="row g-3 needs-validation"
+      method="get"
+      action="/listings/filterPrice/price"
+      novalidate
+    >
+      <div class="col-8">
+        <select class="form-select pb-2" name="price" required>
+          <option selected value="2000">Less than &#8377;&nbsp;2000</option>
+          <option value="3500">&#8377;&nbsp;2000 - &#8377;&nbsp;3500</option>
+          <option value="5000">&#8377;&nbsp;3500 - &#8377;&nbsp;5000</option>
+          <option value="7500">&#8377;&nbsp;5000 - &#8377;&nbsp;7500</option>
+          <option value="10000">&#8377;&nbsp;7500 - &#8377;&nbsp;10000</option>
+          <option value="10001">&#8377;&nbsp;above &#8377;&nbsp;10000</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3 pb-2">Apply</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="tax-toggle col-lg-3 col-md-3 col-sm-3 ms-auto">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckChecked"
+      />
+      <label class="form-check-label" for="flexSwitchCheckChecked"
+        >Display total after taxes</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-esm-1 mt-4">
+  <% if (allListing) { %> <% for(let listing of allListing) { %>
+  <a href="/listings/<%= listing._id %>" class="listing-link">
+    <div class="card col listing-card">
+      <img
+        src="<%= listing.image.url %>"
+        class="card-img-top"
+        alt="listing-image"
+        style="height: 20rem"
+      />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text">
+          <b><%= listing.title %></b><br />
+          <b>&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %></b>
+          night&nbsp;&nbsp;
+          <i class="tax-info">+18% GST</i>
+        </p>
+      </div>
+    </div>
+  </a>
+  <% } %> <% } else { %>
+  <div>No listings available</div>
+  <% } %>
+</div>
+
+<script>
+  let taxBtn = document.getElementById("flexSwitchCheckChecked");
+  let priceChange = true;
+  taxBtn.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>

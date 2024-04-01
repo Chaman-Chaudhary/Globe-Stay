@@ -1,0 +1,205 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 300px;
+    width: 60vw;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white ;
+}
+
+.navbar-brand {
+    color: #fe424d !important;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.search-btn {
+    background-color: #fe424d !important;
+    color: #FFF !important;
+    border-radius: 25px !important;
+    padding: 0 1rem !important;
+}
+
+.search-btn:hover {
+    background-color: #ff525e !important;
+    color: #FFF !important;
+}
+
+.search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-input {
+    border-radius: 25px !important;
+    padding: 0.4rem 2.5rem !important;
+}
+
+/* Footer */
+
+.f-info {
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ebebeb;
+}
+
+.f-info-social,
+.f-info-links,
+.f-info-brand {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.fa-brands:hover {
+    cursor: pointer;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.fa-brands {
+    font-size: 1.5rem;
+}
+
+/* Filters */
+
+.filters {
+    display: flex;
+    align-items: center;
+}
+
+.categories {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.categories a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    color: #222222;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.categories a:hover {
+    opacity: 1;
+}
+
+.category {
+    color: #222222;
+    opacity: 0.8;
+}
+.filter:hover {
+    opacity: 1;
+}
+
+.fa-solid {
+    font-size: 1rem;
+}
+
+.category p{
+    font-size: 0.8rem;
+}
+
+.tax-toggle {
+    border: 1px solid #222222;
+    border-radius: 1rem;
+    padding: 10px 15px;
+}
+
+.tax-info {
+    display: none;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-text{
+    font-weight: 400;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* New Page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edit Page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Show Page */
+.show-img {
+    height: 50vh;
+}
+
+.delete-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Navbar Logo */
+.fa-globe {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+/* Price filter btn */
+.btn-primary {
+    background-color: #fe424d !important;
+    border-color: #fe424d !important;
+}

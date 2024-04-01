@@ -1,0 +1,42 @@
+<%- layout("/layouts/boilerPlate.ejs") %>
+
+<div class="row">
+    <h3 class="col-6 offset-3 mt-3 mb-3">SignUp on GlobeStay</h3>
+    <div class="col-6 offset-3">
+        <form method="post" action="/signup" class="needs-validation" novalidate>
+            <!-- <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input name="username" placeholder="Username" type="text" class="form-control" autofocus required>
+                <div class="invalid-feedback">
+                    Please enter a username.
+                </div>
+            </div> -->
+
+            <div class="input-group mb-3 mt-2">
+                <div class="input-group-text">@</div>
+                <input type="text" name="username" class="form-control" id="autoSizingInputGroup" placeholder="Username" required autofocus>
+                <div class="invalid-feedback">
+                    Please enter a username.
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" placeholder="Enter email address" type="email" class="form-control" autofocus required>
+                <div class="invalid-feedback">
+                    Please enter email address.
+                </div>
+            </div>
+        
+            <div  class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" placeholder="Password" required>
+                <div class="invalid-feedback">
+                    Please enter password.
+                </div>
+            </div>
+        
+            <button type="submit" class="btn btn-success mt-3 mb-3">SignUp</button>
+        </form>
+    </div>
+</div>

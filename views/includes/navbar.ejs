@@ -1,0 +1,61 @@
+<body>
+  <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-globe"></i></a>
+      <span
+        class="me-2"
+        style="margin-left: -0.5rem; font-size: 1.2rem; color: #fe424d"
+        >GlobeStay</span
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <div class="container-fluid">
+            <form
+              class="d-flex needs-validation"
+              role="search"
+              method="get"
+              action="/listings/search/name"
+              novalidate
+            >
+              <input
+                name="name"
+                class="form-control me-2 search-input"
+                type="search"
+                placeholder="Search destinations"
+              />
+              <button class="btn search-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>Search
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">GlobeStay your home</a>
+          <% if (!currUser) { %>
+          <a class="nav-link active" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } else { %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</body>
