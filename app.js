@@ -19,6 +19,7 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const { error } = require("console");
+const Listing = require("./models/listing.js");
 
 const app = express();
 const dbUrl = process.env.ATLASDB_URL;
@@ -83,6 +84,11 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   res.locals.currUser = req.user;
   next();
+});
+
+app.use("/", async (req, res) => {
+  const allListing = await Listing.find({});
+  res.render("listings/index.ejs", { allListing });
 });
 
 app.use("/listings", listingsRouter);
