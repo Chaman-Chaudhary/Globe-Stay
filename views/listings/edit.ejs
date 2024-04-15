@@ -25,7 +25,7 @@
       <div class="mb-3">
         <label for="listing[description]" class="form-label">Description</label>
         <textarea name="listing[description]" class="form-control" required>
-<%= listing.description %></textarea
+        <%= listing.description %></textarea
         >
         <div class="invalid-feedback">Please enter description.</div>
       </div>
@@ -39,9 +39,30 @@
         />
       </div>
 
-      <div class="mb-3">
-        <label for="listing[image]" class="form-label">Upload new image</label>
-        <input type="file" name="listing[image]" class="form-control" />
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="listing[image]" class="form-label"
+            >Upload new image</label
+          >
+          <input type="file" name="listing[image]" class="form-control" />
+        </div>
+
+        <div class="mb-3 col-md-6">
+          <label for="listing[category]" class="form-label">Category</label>
+          <select class="form-select" name="listing[category]" required>
+            <option value="Trending">Trending</option>
+            <option value="Iconic cities">Iconic cities</option>
+            <option value="Mountains" selected>Mountains</option>
+            <option value="Artic">Artic</option>
+            <option value="Beach">Beach</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Lakes">Lakes</option>
+            <option value="Boats">Boats</option>
+            <option value="Farms">Farms</option>
+            <option value="Ski-in/out">Ski-in/out</option>
+            <option value="Camping">Camping</option>
+          </select>
+        </div>
       </div>
 
       <div class="row">
